@@ -34,21 +34,7 @@ CREATE TABLE currencies (
 	code VARCHAR,
 	mid NUMERIC,
 	date DATE
-);
-
-
-CREATE OR REPLACE FUNCTION f_sync_from_xml(
-	datafile text -- := 'C:\AJ\prywatne\P£\2018-03-01.xml'
 )
-  RETURNS boolean AS $$
-DECLARE
-    myxml XML;
-BEGIN
-
-myxml := pg_read_file(datafile, 0, 100000000); 
-RETURN TRUE;
-END;
-$$	LANGUAGE plpgsql
 
 
-SELECT f_sync_from_xml('2018-03-01.xml')
+
