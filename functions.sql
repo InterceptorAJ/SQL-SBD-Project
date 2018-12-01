@@ -1,5 +1,5 @@
 CREATE OR REPLACE FUNCTION importxml(
-	datafile text -- := '[dir]\2018-03-01.xml'
+datafile text
 )
   RETURNS boolean AS $$
 DECLARE
@@ -9,7 +9,6 @@ BEGIN
 myxml := pg_read_file(datafile, 0, 100000000); 
 RETURN TRUE;
 END;
-$$	LANGUAGE plpgsql
+$$	LANGUAGE plpgsql;
 
-
-SELECT importxml('2018-03-01.xml')
+SELECT importxml('2018-03-01.xml') -- file should be inside "\PostgreSQL\10\data" folder
