@@ -1,5 +1,5 @@
 CREATE OR REPLACE FUNCTION importxml(
-	datafile text -- := 'C:\AJ\prywatne\P£\2018-03-01.xml'
+	datafile text -- := '[dir]\2018-03-01.xml'
 )
   RETURNS boolean AS $$
 DECLARE
