@@ -25,7 +25,7 @@ CREATE TABLE cache (
 CREATE TABLE rates (
 	id SERIAL PRIMARY KEY,
 	rate XML
-	date date 	-- rate ma byc wyciagniety razem z date (effective date)
+	date DATE 	-- rate ma byc wyciagniety razem z date (effective date)
 );
 
 
