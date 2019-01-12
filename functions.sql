@@ -74,6 +74,10 @@ LOOP
     SELECT unnest(xpath('//No/text()', xx)) INTO No;
     SELECT unnest(xpath('//Table/text()', xx)) INTO TableType;
 
+    IF date IS NULL or No IS NULL OR TableType IS NULL THEN
+	   RAISE EXCEPTION 'Incorrect xml schema %', xx;
+    END IF;
+
     OPEN ratesCursor FOR SELECT * FROM (SELECT unnest(xpath('//Rates//Rate', xx)) AS xml_element) tt;
     LOOP
         fetch ratesCursor into xx;
