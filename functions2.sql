@@ -54,3 +54,7 @@ XMLTABLE ('/ArrayOfExchangeRatesTable/ExchangeRatesTable/Rates/Rate/Currency' PA
 		 code text PATH '../Code' NOT NULL,
 		 mid text PATH '../Mid' NOT NULL
 		 );
+--------------------------------------------------------------------------------------------------------------------------
+
+SELECT table_to_xml('cache', true, false, '');
+SELECT query_to_xml('SELECT * FROM cache', true, false, '');
